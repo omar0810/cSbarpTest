@@ -1,0 +1,28 @@
+<h1 id="tableLabel">People</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!people"><em>Loading...</em></p>
+<button class="btn btn-primary" (click)="insert()">
+  <span>Insert</span>
+</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="people">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Date of Birth</th>
+      <th>Age</th>
+      <th>Friends</th>
+    </tr>
+  </thead>friends
+  <tbody>
+    <tr *ngFor="let person of people">
+      <td>{{ person.firstName }}</td>
+      <td>{{ person.lastName }}</td>
+      <th>{{ person.dateOfBirth }}</th>
+      <td>{{ person.age }}</td>
+      <td *ngFor="let fr of person.Friends">{{fr  }}</td>
+    </tr>
+  </tbody>
+</table>
